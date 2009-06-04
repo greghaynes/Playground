@@ -1,0 +1,13 @@
+Libcallback: Minimal C callback library.
+
+The goal of Libcallback is to provide a global system where 'senders' can register 'signals' for 'clients' to connect to, and later 'emit' 'signals' calling the handlers of all 'connected' 'clients'.  This is done with minimal overhead, meaning there are no lookup operations which tie a signal to its handlers.
+
+Initializing:
+Before you can use the system you must call cback_init().  This allows the necessary structures to be initialized.  If you do not call this method, the result of subsequent calls to connect and register functions are undefined.
+
+Creating a sender:
+Signals are created using the cback_sender_new function.  This function returns a CBackSenderKey, which is used to identify the signal.  You do not need to, and should not, free this returned value.  You can create as many senders as you like for a sender value that is passed to cback_sender_new, this value is only used as a value passed to all handlers tha connect to this sender.
+
+Connecting to a sender:
+Connecting to a sender requires a funciton defined in the form of void my_callback(void *sender, unsigned int num_params, const CBackParam *params, void *user_data);.  This function will be called when the sender is emitted.
+
