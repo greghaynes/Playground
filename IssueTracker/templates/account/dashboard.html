@@ -1,0 +1,20 @@
+{% extends "../base.html" %}
+
+{% block content %}
+        {% include "../navigation.html" %}
+        
+		<div id="content">
+					<h3>Dashboard for {{ user.nickname }}</h3>
+					<h4>Your project memberships (<a href="/project/create.html">Create a new one</a>)</h4>
+					{% if projects %}
+						<ul id="projectlist">
+						{% for project in projects %}
+							<li><a href="/project/{{ project.tag }}/issues.html">{{ project.name }}</a></li>
+						{% endfor %}
+						</ul>
+					{% else %}
+						You have no projects.
+					{% endif %}
+				</ul>
+		</div>
+{% endblock %}

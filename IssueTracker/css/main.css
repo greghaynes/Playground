@@ -1,0 +1,45 @@
+body {
+	background: #444;
+	margin: 0;
+	padding: 0;
+}
+
+div.header {
+	margin: 0;
+	padding: 0;
+	padding-left: 15px;
+	height: 75px;
+	background: #0363FF;
+	border-bottom: 1px solid #FFF;
+}
+
+h1 {
+	margin: 0;
+	padding-top: 10px;
+	color: #FFF;
+}
+
+ul.navitems {
+	list-style-type: none;
+	margin: 0;
+}
+
+li.navitem {
+	padding-right: 10px;
+	float: left;
+}
+
+a.mainnav {
+	color: #FFF;
+	text-decoration: none;
+}
+
+div#content {
+	margin: 15px;
+	padding: 15px;
+	background: #EEE;
+}
+
+div#sidebar {
+	float: right;
+}

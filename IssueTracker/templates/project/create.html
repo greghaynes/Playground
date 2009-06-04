@@ -1,0 +1,15 @@
+{% extends "../base.html" %}
+
+{% block content %}
+        {% include "../navigation.html" %}
+        
+        <div id="content">
+			<h3>Create Project</h3>
+			<form method="post" action="/project/create.html">
+				Name: <input type="text" name="name" /><br />
+				Tag: <input type="text" name="tag" /><br />
+				<br />
+				<input type="submit" value="submit" />
+			</form>
+        </div>
+{% endblock %}

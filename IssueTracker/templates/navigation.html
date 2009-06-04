@@ -1,0 +1,18 @@
+    <div class="header">
+        <h1>Issue Tracker</h1>
+        <div class="navigation">
+            <ul class="navitems">
+                <li class="navitem">
+                    <a href="/" class="mainnav">Home</a>
+				</li>
+				<li class="navitem">
+                    <a href="/account/dashboard.html" class="mainnav">My Account</a>
+				</li>
+                    {% if logout_url %}
+						<li class="navitem">
+							<a href="{{ logout_url }}" class="mainnav">Logout</a>
+						</li>
+                    {% endif %}
+            </ul>
+        </div>
+    </div>

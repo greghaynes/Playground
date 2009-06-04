@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+
+{% block content %}
+        {% include "../navigation.html" %}
+		
+        <div id="content">
+            {% if project %}
+                <h3>{{ project.name }}{% if can_join %} (<a href="/project/{{ project.tag }}/join.html">Join Project){% endif %}</h3>
+
+                <ul id="issueslist">
+                    {% if issues %}
+                        {% for issue in issues %}
+                            <li>{{ issue.title }}</li>
+                        {% endfor %}
+                    {% else %}
+                        Project has no issues.
+                    {% endif %}
+                </ul>
+            {% else %}
+                <h3>Project not Found</h3>
+            {% endif %}
+        </div>
+{% endblock %}
